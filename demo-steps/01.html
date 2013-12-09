@@ -49,7 +49,7 @@ title: Demo step
                 Phone number
             </label>
             <input id="phone" name="phone" type="tel" required="required" autofocus="true" placeholder="(###) ###-####" title="The customer's phone number is required." data-h5-errorid="invalid-phone" />
-            <span id="invalid-phone" class="field-validation-feedback">*</span>
+            <span id="invalid-phone" class="field-validation-feedback"></span>
             <span class="explanation">Input always starts here</span>
         </fieldset>
         <fieldset data-skip-on-tab="true" data-plus-as-tab="true">
@@ -133,7 +133,7 @@ title: Demo step
                 Zip code
             </label>
             <input id="invoice-zip" name="invoice-zip" type="text" required="required" placeholder="A#A #A#" pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$" title="Required. Use the standard Canadian H0H 0H0 format." data-h5-errorid="invalid-invoice-zip" />
-            <span id="invalid-invoice-zip" class="field-validation-feedback">*</span>
+            <span id="invalid-invoice-zip" class="field-validation-feedback"></span>
             <label for="invoice-city">
                 City
             </label>
@@ -180,7 +180,8 @@ title: Demo step
                 <label for="delivery-zip">
                     Zip code
                 </label>
-                <input id="delivery-zip" name="delivery-zip" type="text" data-is-follow-up-required="required" placeholder="A#A #A#" />
+                <input id="delivery-zip" name="delivery-zip" type="text" data-is-follow-up-required="required" placeholder="A#A #A#" pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$" title="Required. Use the standard Canadian H0H 0H0 format." data-h5-errorid="invalid-delivery-zip" />
+                <span id="invalid-delivery-zip" class="field-validation-feedback"></span>
                 <label for="delivery-city">
                     City
                 </label>
@@ -264,6 +265,8 @@ $(function() {
         // Enter, numpad plus
         key: [13, 107]
     });
+
+    $(".explanation").hide();
 
     var $forms = $("form")
 

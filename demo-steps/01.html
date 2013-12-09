@@ -48,7 +48,8 @@ title: Demo step
             <label for="phone">
                 Phone number
             </label>
-            <input id="phone" name="phone" type="tel" required="required" autofocus="true" placeholder="(###) ###-####" />
+            <input id="phone" name="phone" type="tel" required="required" autofocus="true" placeholder="(###) ###-####" title="The customer's phone number is required." data-h5-errorid="invalid-phone" />
+            <span id="invalid-phone" class="field-validation-feedback">*</span>
             <span class="explanation">Input always starts here</span>
         </fieldset>
         <fieldset data-skip-on-tab="true" data-plus-as-tab="true">
@@ -131,7 +132,8 @@ title: Demo step
             <label for="invoice-zip">
                 Zip code
             </label>
-            <input id="invoice-zip" name="invoice-zip" type="text" required="required" placeholder="A#A #A#" />
+            <input id="invoice-zip" name="invoice-zip" type="text" required="required" placeholder="A#A #A#" pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$" title="Required. Use the standard Canadian H0H 0H0 format." data-h5-errorid="invalid-invoice-zip" />
+            <span id="invalid-invoice-zip" class="field-validation-feedback">*</span>
             <label for="invoice-city">
                 City
             </label>
@@ -246,6 +248,7 @@ debug.setLevel(3);
 
 //]]>
 </script>
+<script src="/resources/javascript/jquery.h5validate.js"></script>
 <script src="/resources/javascript/emulatetab.joelpurra.js"></script>
 <script src="/resources/javascript/skipontab.joelpurra.js"></script>
 <script src="/resources/javascript/plusastab.joelpurra.js"></script>
@@ -256,61 +259,56 @@ debug.setLevel(3);
 <script>
 //<![CDATA[
 
-JoelPurra.PlusAsTab.setOptions({
-    // Enter, numpad plus
-    key: [13, 107]
-});
-
-$("form")
-    .submit(simulateSubmitting);
-
-$("#add")
-    .click(addProductTableRow);
-
-function numericalInput(idName) {
-    var $input = $("<input />", {
-        id: idName,
-        name: idName,
-        type: "number",
-        min: 0,
-        step: 1,
-        required: "required"
+$(function() {
+    JoelPurra.PlusAsTab.setOptions({
+        // Enter, numpad plus
+        key: [13, 107]
     });
 
-    return $input;
-}
+    var $forms = $("form")
 
-function addProductTableRow() {
-    var $productsBody = $("#products tbody");
-    var productCounter = $productsBody.children("tr").length;
-    var productId = "amount-" + productCounter;
-    var quantityId = "quantity-" + productCounter;
+    $forms
+        .h5Validate();
 
-    $productsBody
-        .append($("<tr />")
-            .append($("<td />")
-                .html(productCounter))
-            .append($("<td />")
-                .append(numericalInput(productId)))
-            .append($("<td />")
-                .append(numericalInput(quantityId)
-                    .val(1))));
+    $("#add")
+        .click(addProductTableRow);
 
-    // Skipping of the new element is implicit, since it is inside a container that
-    // is already marked for skipping with the data attribute
-    // Programmatically setting .focus() is not affected by SkipOnTab
-    $("#" + productId)
-        .focus();
-}
+    function numericalInput(idName) {
+        var $input = $("<input />", {
+            id: idName,
+            name: idName,
+            type: "number",
+            min: 0,
+            step: 1,
+            required: "required"
+        });
 
-function simulateSubmitting(event) {
-    event.preventDefault();
-
-    if (confirm("Simulating that the form has been submitted and the order saved.\n\nWould you like to reload the page?")) {
-        location.reload();
+        return $input;
     }
 
-    return false;
-}
+    function addProductTableRow() {
+        var $productsBody = $("#products tbody");
+        var productCounter = $productsBody.children("tr").length;
+        var productId = "amount-" + productCounter;
+        var quantityId = "quantity-" + productCounter;
+
+        $productsBody
+            .append($("<tr />")
+                .append($("<td />")
+                    .html(productCounter))
+                .append($("<td />")
+                    .append(numericalInput(productId)))
+                .append($("<td />")
+                    .append(numericalInput(quantityId)
+                        .val(1))));
+
+        // Skipping of the new element is implicit, since it is inside a container that
+        // is already marked for skipping with the data attribute
+        // Programmatically setting .focus() is not affected by SkipOnTab
+        $("#" + productId)
+            .focus();
+    }
+});
+
 //]]>
 </script>

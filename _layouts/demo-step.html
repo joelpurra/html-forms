@@ -2,43 +2,63 @@
 layout: example
 ---
 <style scoped="scoped">
-    body {
-        padding-bottom: 2em;
-    }
-    label {
-        display: block;
-    }
-    input, textarea, select {
-        min-width: 20em;
-    }
-    textarea {
-        height: 5.5em;
-    }
-    table input {
-        min-width: 5em;
-    }
-    input[type=radio], input[type=checkbox] {
-        min-width: 2em;
-    }
-    input[type=radio] + label, input[type=checkbox] + label {
-        display: inline;
-    }
-    ol {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    small {
-        color: #999;
-    }
-    kbd {
-        border-width: 2px;
-        border-style: outset;
-        padding: 1px;
-        background-color: #eee;
-    }
-    .explanation {
-        background-color: #ffffcc;
-        padding: 0.3em;
-    }
-    </style>
+body {
+    padding-bottom: 2em;
+}
+label {
+    display: block;
+}
+input, textarea, select {
+    min-width: 20em;
+}
+textarea {
+    height: 5.5em;
+}
+table input {
+    min-width: 5em;
+}
+input[type=radio], input[type=checkbox] {
+    min-width: 2em;
+}
+input[type=radio] + label, input[type=checkbox] + label {
+    display: inline;
+}
+ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+small {
+    color: #999;
+}
+kbd {
+    border-width: 2px;
+    border-style: outset;
+    padding: 1px;
+    background-color: #eee;
+}
+.explanation {
+    background-color: #ffffcc;
+    padding: 0.3em;
+}
+.ui-state-valid {
+}
+.ui-state-error {
+    color: #b94a48;
+    border-width: 1px;
+    border-color: #b94a48;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(255, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(255, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(255, 0, 0, 0.6);
+}
+.ui-state-error:before {
+    vertical-align: text-top;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    content:"\0026A0";
+}
+.field-validation-feedback{
+    color: #cc6666;
+}
+</style>
 {{ content }}

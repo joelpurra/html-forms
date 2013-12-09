@@ -1,13 +1,27 @@
 ---
 layout: bare
 ---
-<head>
-	<title>{{ site.projectName }}: {{ page.title | xml_escape }}</title>
+
+<head lang="en">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{{ site.projectName }}: {{ page.title | xml_escape }}</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quando" />
+    <style type="text/css" scoped="scoped">
+    h1, h2, h3 {
+        font-family: Quando, Helvetica, Verdana, sans-serif;
+    }
+    </style>
+
 </head>
+
 <body>
-	<h1>
-		<a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
-	</h1>
-	{{ content }}
-{% include ga.html %}
+    <h1>
+        <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
+    </h1>
+    {{ content }}
+    <footer class="container">
+        <hr />
+        <a href="{{ site.projectUrl }}">{{ site.projectName }}</a> &copy; 2013 <a href="http://joelpurra.com/">Joel Purra</a>. Code snippets/examples may be copied freely, the rest is licenced under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+    </footer>
+    {% include ga.html %}
 </body>

@@ -1,0 +1,252 @@
+---
+layout: demo-step
+title: Demo step
+---
+<section>
+    <h2>
+        Register phone order into order administration system
+    </h2>
+    <p>
+        This
+        <span class="explanation">annotated example form</span>
+        is used only by sales staff. They enter order details received by phone all day long, which is why they don't want to
+        <kbd>tab</kbd>
+        through all fields every time.
+    </p>
+    <form action="about:blank" method="POST">
+        <fieldset>
+            <legend>Customer contact information</legend>
+            <label for="phone">
+                Phone number
+            </label>
+            <input id="phone" name="phone" type="tel" required="required" autofocus="true" placeholder="(###) ###-####" title="The customer's phone number is required." data-h5-errorid="invalid-phone" />
+            <span id="invalid-phone" class="field-validation-feedback"></span>
+            <span class="explanation">Input always starts here</span>
+        </fieldset>
+        <fieldset>
+            <legend>Products</legend>
+            <table id="products">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Row
+                        </th>
+                        <th scope="col">
+                            Product
+                        </th>
+                        <th scope="col">
+                            Quantity
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            <input id="productId-0" name="productId-0" type="number" min="0" step="1" value="1234" required="required" />
+                        </td>
+                        <td>
+                            <input id="quantityId-0" name="quantityId-0" type="number" min="0" step="1" value="1" required="required" />
+                        </td>
+                        <td>
+                            Basic product, nothing extra
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <input id="productId-1" name="productId-1" type="number" min="0" step="1" value="5678" required="required" />
+                        </td>
+                        <td>
+                            <input id="quantityId-1" name="quantityId-1" type="number" min="0" step="1" value="1" required="required" />
+                        </td>
+                        <td>
+                            Product insurance
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="add" type="button">
+                Add another product type
+            </button>
+        </fieldset>
+        <fieldset>
+            <legend>Invoice address</legend>
+            <label for="invoice-name">
+                Name
+            </label>
+            <input id="invoice-name" name="invoice-name" type="text" required="required" />
+            <label for="invoice-address1">
+                Address line 1
+            </label>
+            <input id="invoice-address1" name="invoice-address1" type="text" required="required" />
+            <label for="invoice-address2">
+                Address line 2
+                <small>(optional)</small>
+            </label>
+            <input id="invoice-address2" name="invoice-address2" type="text" />
+            <small>(optional)</small>
+            <label for="invoice-zip">
+                Zip code
+            </label>
+            <input id="invoice-zip" name="invoice-zip" type="text" required="required" placeholder="A#A #A#" pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$" title="Required. Use the standard Canadian H0H 0H0 format." data-h5-errorid="invalid-invoice-zip" />
+            <span id="invalid-invoice-zip" class="field-validation-feedback"></span>
+            <label for="invoice-city">
+                City
+            </label>
+            <input id="invoice-city" name="invoice-city" type="text" required="required" />
+            <span class="explanation">Most of the time, entering details ends here; just pressing
+                <kbd>enter</kbd>saves the order.</span>
+            <label for="invoice-state">
+                State/province
+            </label>
+            <select id="invoice-state" name="invoice-state" required="required">
+                {% include province-options.html %}
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Delivery address</legend>
+            <p>
+                Is the delivery address the same as the invoice address?
+            </p>
+            <input id="invoice-delivery-address-same-0" name="invoice-delivery-address-same" type="radio" checked="checked" />
+            <label for="invoice-delivery-address-same-0">
+                Yes</label>
+
+            <input id="invoice-delivery-address-same-1" name="invoice-delivery-address-same" type="radio" />
+            <label for="invoice-delivery-address-same-1">
+                No</label>
+                <label for="delivery-name">
+                    Name
+                </label>
+                <input id="delivery-name" name="delivery-name" type="text" />
+                <label for="delivery-address1">
+                    Address line 1
+                </label>
+                <input id="delivery-address1" name="delivery-address1" type="text" />
+                <label for="delivery-address2">
+                    Address line 2
+                    <small>(optional)</small>
+                </label>
+                <input id="delivery-address2" name="delivery-address2" type="text" />
+                <small>(optional)</small>
+                <label for="delivery-zip">
+                    Zip code
+                </label>
+                <input id="delivery-zip" name="delivery-zip" type="text" placeholder="A#A #A#" pattern="^([a-zA-Z]\d[a-zA-Z])\s*(\d[a-zA-Z]\d)$" title="Required. Use the standard Canadian H0H 0H0 format." data-h5-errorid="invalid-delivery-zip" />
+                <span id="invalid-delivery-zip" class="field-validation-feedback"></span>
+                <label for="delivery-city">
+                    City
+                </label>
+                <input id="delivery-city" name="delivery-city" type="text" />
+                <span class="explanation">Most of the time, entering details ends here; just pressing
+                    <kbd>enter</kbd>saves the order.</span>
+                <label for="delivery-state">
+                    State/province
+                </label>
+                <select id="delivery-state" name="delivery-state">
+                    {% include province-options.html %}
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Delivery options</legend>
+            <input id="giftwrap" name="giftwrap" type="checkbox" />
+            <label for="giftwrap">
+                Gift wrap</label>
+            <ol>
+                <li>
+                    <input id="delivery-0" name="delivery" type="radio" checked="checked" />
+                    <label for="delivery-0">
+                        Normal delivery (5-6 days)</label>
+                </li>
+                <li>
+                    <input id="delivery-1" name="delivery" type="radio" />
+                    <label for="delivery-1">
+                        Express delivery (2-3 days)</label>
+                </li>
+                <li>
+                    <input id="delivery-2" name="delivery" type="radio" />
+                    <label for="delivery-2">
+                        Overnight delivery (1 day)</label>
+                </li>
+            </ol>
+            <span class="explanation">
+                <kbd>shift</kbd>-
+                <kbd>tab</kbd>to radio buttons work as usual.</span>
+        </fieldset>
+        <fieldset>
+            <legend>Internal information</legend>
+            <label for="notes">
+                Order notes
+                <small>(optional)</small>
+            </label>
+            <textarea id="notes" name="notes"></textarea>
+            <small>(optional)</small>
+        </fieldset>
+        <button type="submit">
+            Simulate save order and show alert box
+        </button>
+    </form>
+</section>
+<script src="/resources/javascript/jquery-1.10.2.js"></script>
+<script src="/resources/javascript/ba-debug.min.js"></script>
+<script>
+//<![CDATA[
+
+debug.setLevel(3);
+
+//]]>
+</script>
+<script src="/resources/javascript/jquery.h5validate.js"></script>
+<script>
+//<![CDATA[
+
+$(function() {
+    $(".explanation").hide();
+
+    var $forms = $("form")
+
+    $forms
+        .h5Validate();
+
+    $("#add")
+        .click(addProductTableRow);
+
+    function numericalInput(idName) {
+        var $input = $("<input />", {
+            id: idName,
+            name: idName,
+            type: "number",
+            min: 0,
+            step: 1,
+            required: "required"
+        });
+
+        return $input;
+    }
+
+    function addProductTableRow() {
+        var $productsBody = $("#products tbody");
+        var productCounter = $productsBody.children("tr").length;
+        var productId = "amount-" + productCounter;
+        var quantityId = "quantity-" + productCounter;
+
+        $productsBody
+            .append($("<tr />")
+                .append($("<td />")
+                    .html(productCounter))
+                .append($("<td />")
+                    .append(numericalInput(productId)))
+                .append($("<td />")
+                    .append(numericalInput(quantityId)
+                        .val(1))));
+    }
+});
+
+//]]>
+</script>

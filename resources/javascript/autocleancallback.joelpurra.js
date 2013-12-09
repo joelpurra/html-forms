@@ -4,13 +4,11 @@
  * Developed for PTS by Joel Purra <http://joelpurra.com/>
  * Released under the BSD license.
  *
+ * https://github.com/joelpurra/autocleancallback
+ *
  * A jQuery plugin to clean input fields with common functionality, like
  * trim, normalize whitespace, digits only. It is also easily extensible.
  */
-// https://gist.github.com/2254354
-
-// Uses Ben Alman's JavaScript Debug: A simple wrapper for console.log
-// http://benalman.com/projects/javascript-debug-console-log/
 
 /*jslint white:true */
 /*global jQuery:true, JoelPurra:true, debug:true*/
@@ -122,6 +120,44 @@ var JoelPurra = JoelPurra || {};
         }
 
         namespace.autoCleanCallback($input, cleanTrim);
+    };
+
+    namespace.autoCleanTrimLeft = function($input) {
+        debug.log(".autoCleanTrimLeft($input)", $input);
+
+        function cleanTrimLeft($inputToClean) {
+            debug.log(".autoCleanTrimLeft($input)", $input, "cleanTrimLeft($inputToClean)", $inputToClean);
+
+            var val = $inputToClean.val(),
+                clean = val.trimLeft();
+
+            if (val !== clean) {
+                return clean;
+            }
+
+            return null;
+        }
+
+        namespace.autoCleanCallback($input, cleanTrimLeft);
+    };
+
+    namespace.autoCleanTrimRight = function($input) {
+        debug.log(".autoCleanTrimRight($input)", $input);
+
+        function cleanTrimRight($inputToClean) {
+            debug.log(".autoCleanTrimRight($input)", $input, "cleanTrimRight($inputToClean)", $inputToClean);
+
+            var val = $inputToClean.val(),
+                clean = val.trimRight();
+
+            if (val !== clean) {
+                return clean;
+            }
+
+            return null;
+        }
+
+        namespace.autoCleanCallback($input, cleanTrimRight);
     };
 
     namespace.autoCleanLowerCase = function($input) {

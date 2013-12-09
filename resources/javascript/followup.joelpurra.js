@@ -1,72 +1,25 @@
 /*!
- * @license FollowUpQuestions
- * Copyright © 2012 Joel Purra <http://joelpurra.se/>
+ * @license FollowUp
+ * Copyright © 2012, 2013 Joel Purra <http://joelpurra.se/>
  * Released under MIT, BSD and GPL license. Comply with at least one.
+ *
+ * https://github.com/joelpurra/followup
  *
  * A jQuery plugin to show and hide follow up questions in a form. The
  * follow ups are specified through HTML5 [data-*] attributes.
  */
-// https://gist.github.com/3024198
-//
-// USAGE
-// Include the script after jQuery has been loaded. It will check all existing form elements
-// and automatically initilaize follow-up questions when the page has loaded.
-//
-// Note: currently only <input type="radio" /> or <input type="checkbox" /> can have follow up
-// questions, visible when the input has been checked.
-//
-// Markup for a single question (form input) that has a follow up question
-//  data-has-follow-up="sibling"
-//      "sibling" assumes the follow up question(s) containers shares the same parent element.
-//  data-has-follow-up="selector"
-//  data-target="#follow-up-question-container-elsewhere"
-//      "selector" allows addressing any other data-target="..." container element(s) with
-//      a jQuery style selector.
-//
-// Markup for containers with multiple radio buttons inside
-//  data-has-follow-ups=""
-// 
-// Markup for a question that is required when it is a follow up question
-//  data-is-follow-up-required="required"
-//
-// Markup for the container of a follow up container
-//  data-is-follow-up=""
-//
-// EXAMPLE WITH A GROUP OF RADIO BUTTONS
-// Only one of the <input type="radio" /> buttons has a follow up question. Since they are in
-// the same group, they will be evaulated together. Changing from yes to no will change the
-// visibility of the follow up question <textarea>.
-//
-// <p data-has-follow-ups="">
-//     Have you ever had a close encounter with a UFO (Unidentified Flying Object)?
-//     <label><input type="radio" name="seen-ufo" required="required" data-has-follow-up="sibling" /> Yes
-//         <label data-is-follow-up="">Please explain the encounter, especially what kind it was
-//             <textarea data-is-follow-up-required="required"></textarea>
-//         </label>
-//     </label>
-//     <label><input type="radio" name="seen-ufo" required="required" /> No</label>
-// </p>
-//
-// TODO LIST
-//  - Use with <select> dropdowns.
-//  - Use with other <input /> typs and <textarea>?
-//  - Use dynamic change listener.
-//      - or - 
-//  - Expose a function to dynamically add questions with follow ups.
-//  - Animations when showing/hiding elements.
-//  - Package the plugin better.
-//
-/*jslint white: true, browser: true*/
-/*global jQuery*/
+
+/*jslint white: true, todo: true */
+/*global jQuery: true */
 
 // Set up namespace, if needed
 var JoelPurra = JoelPurra || {};
 
 (function($, namespace) {
-    "use strict"; // jshint ;_;
-    var tag = "FollowUpQuestion",
+    "use strict";
+    var tag = "FollowUp",
         eventNamespace = "." + tag,
-        fuq = namespace.FollowUpQuestion = namespace.FollowUpQuestion || {};
+        fuq = namespace.FollowUp = namespace.FollowUp || {};
 
     fuq.getMode = function($element) {
         return $element.attr("data-has-follow-up");
@@ -76,14 +29,14 @@ var JoelPurra = JoelPurra || {};
         var $target, mode = fuq.getMode($element);
 
         switch (mode) {
-        case "sibling":
-            $target = $element.parent().find("[data-is-follow-up]");
-            break;
+            case "sibling":
+                $target = $element.parent().find("[data-is-follow-up]");
+                break;
 
-            // case "selector" is the default/fallback
-        default:
-            $target = $($element.attr("data-target"));
-            break;
+                // case "selector" is the default/fallback
+            default:
+                $target = $($element.attr("data-target"));
+                break;
         }
 
         return $target;

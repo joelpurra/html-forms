@@ -1,61 +1,18 @@
 /*!
- * @license AutoCleanCallback Canada
+ * @license AutoCleanCallback-Canada
  * Copyright (c) 2012, 2013 Joel Purra <http://joelpurra.com/>
- * Released under the BSD license.
+ * Released under MIT, BSD and GPL license. Comply with at least one.
+ *
+ * https://github.com/joelpurra/autocleancallback-canada
  *
  * Canadian extensions to AutoCleanCallback (required).
  */
 
-/*jslint white:true */
+/*jslint white:true, todo: true */
 /*global jQuery:true, JoelPurra:true, debug:true*/
 
 (function($) {
     "use strict";
-    (function(namespace) {
-
-        // Calling https://gist.github.com/2254354
-        namespace.autoCleanTrimLeft = function($input) {
-            debug.log(".autoCleanTrimLeft($input)", $input);
-
-            function cleanTrimLeft($inputToClean) {
-                debug.log(".autoCleanTrimLeft($input)", $input, "cleanTrimLeft($inputToClean)", $inputToClean);
-
-                var val = $inputToClean.val(),
-                    clean = val.trimLeft();
-
-                if (val !== clean) {
-                    return clean;
-                }
-
-                return null;
-            }
-
-            namespace.autoCleanCallback($input, cleanTrimLeft);
-        };
-    }(JoelPurra));
-
-    (function(namespace) {
-
-        // Calling https://gist.github.com/2254354
-        namespace.autoCleanTrimRight = function($input) {
-            debug.log(".autoCleanTrimRight($input)", $input);
-
-            function cleanTrimRight($inputToClean) {
-                debug.log(".autoCleanTrimRight($input)", $input, "cleanTrimRight($inputToClean)", $inputToClean);
-
-                var val = $inputToClean.val(),
-                    clean = val.trimRight();
-
-                if (val !== clean) {
-                    return clean;
-                }
-
-                return null;
-            }
-
-            namespace.autoCleanCallback($input, cleanTrimRight);
-        };
-    }(JoelPurra));
 
     (function(namespace) {
 

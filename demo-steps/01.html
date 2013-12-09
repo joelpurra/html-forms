@@ -267,6 +267,19 @@ $("form")
 $("#add")
     .click(addProductTableRow);
 
+function numericalInput(idName) {
+    var $input = $("<input />", {
+        id: idName,
+        name: idName,
+        type: "number",
+        min: 0,
+        step: 1,
+        required: "required"
+    });
+
+    return $input;
+}
+
 function addProductTableRow() {
     var $productsBody = $("#products tbody");
     var productCounter = $productsBody.children("tr").length;
@@ -278,21 +291,9 @@ function addProductTableRow() {
             .append($("<td />")
                 .html(productCounter))
             .append($("<td />")
-                .append($("<input />", {
-                    id: productId,
-                    type: "number",
-                    min: 1000,
-                    step: 1,
-                    required: "required"
-                })))
+                .append(numericalInput(productId)))
             .append($("<td />")
-                .append($("<input />", {
-                        id: quantityId,
-                        type: "number",
-                        min: 0,
-                        step: 1,
-                        required: "required"
-                    })
+                .append(numericalInput(quantityId)
                     .val(1))));
 
     // Skipping of the new element is implicit, since it is inside a container that

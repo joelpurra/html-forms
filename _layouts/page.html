@@ -10,18 +10,48 @@ layout: bare
     h1, h2, h3 {
         font-family: Quando, Helvetica, Verdana, sans-serif;
     }
+    .donate kbd {
+        display: inline-block;
+        color: #555;
+        vertical-align: middle;
+        padding: 0.1em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        background-color: #fcfcfc;
+        border: solid 1px #ccc;
+        border-bottom-color: #bbb;
+        border-radius: 0.3em;
+        box-shadow: inset 0 -1px 0 #bbb;
+        font-family: Helvetica, Verdana, sans-serif;
+    }
     </style>
 
 </head>
 
 <body>
-    <h1>
-        <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
-    </h1>
+    <header>
+        <h1>
+            <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
+        </h1>
+
+        <p class="donate">
+            <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
+            <a href="https://joelpurra.com/donate/proceed/?amount=25&currency=usd"><kbd>Donate $25 now</kbd></a>
+            <a href="https://joelpurra.com/donate/proceed/?amount=100&currency=usd&invoice=true"><kbd>Donate $100 now</kbd></a>
+            <a href="https://joelpurra.com/donate/"><kbd>More options</kbd></a>
+        </p>
+    </header>
     {{ content }}
     <footer class="container">
         <hr />
-        <a href="{{ site.projectUrl }}">{{ site.projectName }}</a> &copy; 2013, 2014, 2015, 2016, 2017 <a href="https://joelpurra.com/">Joel Purra</a>. Code snippets/examples may be copied freely, the rest is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+        <a href="{{ site.projectUrl }}">{{ site.projectName }}</a> &copy; 2013, 2014, 2015, 2016, 2017 <a href="https://joelpurra.com/">Joel Purra</a>. Code snippets/examples may be copied freely, the rest is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. <a href="https://joelpurra.com/donate/">Your donations are appreciated!</a>
+
+        <p class="donate">
+            <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
+            <a href="https://joelpurra.com/donate/proceed/?amount=25&currency=usd"><kbd>Donate $25 now</kbd></a>
+            <a href="https://joelpurra.com/donate/proceed/?amount=100&currency=usd&invoice=true"><kbd>Donate $100 now</kbd></a>
+            <a href="https://joelpurra.com/donate/"><kbd>More options</kbd></a>
+        </p>
     </footer>
     {% include piwik.html %}
 </body>

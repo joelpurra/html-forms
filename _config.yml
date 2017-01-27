@@ -16,7 +16,7 @@ baseurl: /projects/html-forms
 projectName: Improving user experience in HTML forms
 
 # Use this for the gh-pages root of your project.
-projectUrl: https://joelpurra.github.io/html-forms
+projectUrl: https://joelpurra.com/projects/html-forms/
 
 # The github project page URL.
 projectGithub: https://github.com/joelpurra/html-forms

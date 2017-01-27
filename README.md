@@ -1,7 +1,9 @@
-# [Improving user experience in HTML forms](https://joelpurra.github.io/html-forms-presentation/) resources and demo
+# [Improving user experience in HTML forms](https://joelpurra.com/projects/html-forms/) resources and demo
 
-[Watch the slides online](https://joelpurra.github.io/html-forms-presentation/) or [have a look at other resources](https://joelpurra.github.io/html-forms/).
-
+- [Watch the slides online](https://joelpurra.github.io/html-forms-presentation/)
+- [Demo and steps for the slides](https://joelpurra.com/projects/html-forms/).
+- [Source code for the demo](https://github.com/joelpurra/html-forms)
+- [Source code for the slides](https://github.com/joelpurra/html-forms-presentation)
 
 
 ## Development
@@ -20,12 +22,11 @@ open "http://127.0.0.1:4000/projects/html-forms/"
 
 
 
-## License
+---
+
+
+
 Copyright &copy; 2013, 2014, 2015, 2016, 2017 [Joel Purra](https://joelpurra.com/)
 All rights reserved.
 
-Code snippets/examples may be copied freely, the rest is licenced under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/joelpurra/html-forms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Code snippets/examples may be copied freely, the rest is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).

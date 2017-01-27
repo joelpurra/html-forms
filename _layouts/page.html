@@ -4,15 +4,47 @@ layout: bare
 
 <head lang="en">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{ site.projectName }}: {{ page.title | xml_escape }}</title>
+    <title>{{ page.title | xml_escape }} &mdash; {{ site.projectName }} by Joel Purra</title>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/fonts/font.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/resources/style/main.css" />
+
+    <link rel="image_src" href="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_01.jpg" />
+
+    <link rel="shortcut icon" href="/image/logo/favicon.ico" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-64x64.png" sizes="64x64" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-128x128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="/image/logo/joelpurra-256x256.png" sizes="256x256" />
+
+    <!-- <link rel="canonical" href="https://joelpurra.com/projects/html-forms/" /> -->
+    <link rel="canonical-domain" href="https://joelpurra.com/" />
+    <meta name="title" content="{{ page.title | xml_escape }} &mdash; {{ site.projectName }} by Joel Purra" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ page.title | xml_escape }} &mdash; How to improve UX in HTML forms: 10+ usability projects explained! &mdash; {{ site.projectName }}" />
+    <meta name="twitter:description" content="How efficient are your forms? Can you improve the UX? What professionals using your forms &mdash; can you speed up their work? Here is a look at some ways you can improve your forms with the help of plugins." />
+    <meta name="twitter:site" content="@joelpurra" />
+    <meta name="twitter:creator" content="@joelpurra" />
+    <meta name="twitter:image:src" content="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_01.jpg" />
+    <meta name="twitter:domain" content="joelpurra.com" />
+
+    <meta property="og:site_name" content="{{ page.title | xml_escape }} &mdash; How to improve UX in HTML forms: 10+ usability projects explained! &mdash; {{ site.projectName }}" />
+    <meta property="og:url" content="https://joelpurra.com/projects/html-forms/" />
+    <meta property="og:image" content="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_01.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="768" />
+    <meta property="og:title" content="{{ page.title | xml_escape }} &mdash; How to improve UX in HTML forms: 10+ usability projects explained! &mdash; {{ site.projectName }}" />
+
+    <meta name="description" content="{{ page.title | xml_escape }}. How efficient are your forms? Can you improve the UX? What professionals using your forms &mdash; can you speed up their work? Here is a look at some ways you can improve your forms with the help of plugins." />
 </head>
 
 <body>
     <header>
         <h1>
-            <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
+            {{ page.title | xml_escape }} &mdash; <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>
         </h1>
 
         <p class="donate">

@@ -2,32 +2,65 @@
 layout: page
 title: Intro
 ---
+
+<section>
+    <h2 class="hide">
+        Presentation video
+    </h2>
+    <p>
+        <figure class="video multisize">
+            <!--
+            <picture>
+                <source sizes="(min-width: 1440px) 1280w, (min-width: 900px) 854w, 432w" srcset="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_highres.mp4 1280w, https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_mediumres.mp4 854w, https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_lowres.mp4 432w" type="video/mp4" />
+                <img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_mediumres.jpg" alt="Joel Purra standing in front of a projector screen" title="A screenshot of the video from the thesis defense" />
+            </picture>
+            -->
+            <video class="highres" controls="controls" preload="none" poster="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_highres.jpg">
+                <source src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_highres.mp4" type="video/mp4" />
+            </video>
+            <video class="mediumres" controls="controls" preload="none" poster="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_mediumres.jpg">
+                <source src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_mediumres.mp4" type="video/mp4" />
+            </video>
+            <video class="lowres" controls="controls" preload="none" poster="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_lowres.jpg">
+                <source src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_lowres.mp4" type="video/webm" /> I'm sorry; the browser couldn't load the video. Try the download links instead.
+            </video>
+            <figcaption>
+                Video recording from the <a href="https://www.meetup.com/Berlin-HTML5-User-Group/events/152209792/">HTML5 Berlin User Group meetup 2013-12-09</a> at Co-Up in Berlin. The length is 50:14 minutes. Also see the <a href="https://joelpurra.github.io/html-forms-presentation/">presentation slides</a>.
+            </figcaption>
+        </figure>
+    </p>
+
+    <p>
+        Video download:
+        <a href="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_highres.mp4">high resolution</a> (1.1 GB, MP4 format),
+        <a href="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_mediumres.mp4">medium resolution</a> (469 MB, MP4 format),
+        <a href="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_lowres.webm">low resolution</a> (106 MB, WebM format). Also <a href="https://www.youtube.com/watch?v=Xz1a5iTi3aU">available on youtube</a>.
+    </p>
+</section>
+
 <section>
     <h2>
-        Resources
+        Demo steps
     </h2>
+    <p>
+        Starting from a plain HTML5 form, each step adds new features <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> style. In practice, for demo purposes, I started with all features and removed them one by
+        one &mdash; that's one of the little-known properties of progressive enhancement.
+    </p>
+
     <ul>
-        <li><a href="https://joelpurra.com/projects/html-forms/">This page</a>
+        <li><a href="demo-steps/07.html">Step 07</a> Standard HTML5 form (no extra features)
         </li>
-        <li><a href="https://joelpurra.github.io/html-forms-presentation/">Presentation slides</a>
+        <li><a href="demo-steps/06.html">Step 06</a> h5Validate
         </li>
-        <li>Demo steps
-            <ol>
-                <li><a href="demo-steps/07.html">Step 07</a> Standard HTML5 form
-                </li>
-                <li><a href="demo-steps/06.html">Step 06</a> h5Validate
-                </li>
-                <li><a href="demo-steps/05.html">Step 05</a> SkipOnTab
-                </li>
-                <li><a href="demo-steps/04.html">Step 04</a> PlusAsTab
-                </li>
-                <li><a href="demo-steps/03.html">Step 03</a> Followup
-                </li>
-                <li><a href="demo-steps/02.html">Step 02</a> AutoCleanCallback
-                </li>
-                <li><a href="demo-steps/01.html">Step 01</a> PageHasFormChanges
-                </li>
-            </ol>
+        <li><a href="demo-steps/05.html">Step 05</a> SkipOnTab
+        </li>
+        <li><a href="demo-steps/04.html">Step 04</a> PlusAsTab
+        </li>
+        <li><a href="demo-steps/03.html">Step 03</a> Followup
+        </li>
+        <li><a href="demo-steps/02.html">Step 02</a> AutoCleanCallback
+        </li>
+        <li><a href="demo-steps/01.html">Step 01</a> PageHasFormChanges (all extra features)
         </li>
     </ul>
 </section>
@@ -70,8 +103,37 @@ title: Intro
 
 <section>
     <h2>
+        Presentation photos
+    </h2>
+    <figure class="slideshow">
+        <span class="fadein">
+            <img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_01.jpg" />
+            <img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_02.jpg" />
+            <img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_03.jpg" />
+        </span>
+        <img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_1024x_01.jpg" />
+        <figcaption>
+            Photos from the HTML5 Berlin User Group meetup 2013-12-09, by Alexandre Sutra.
+        </figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>
         Log
     </h2>
+    <section>
+        <h3>
+            <time datetime="2017-01-27" title="2017-01-27">
+                2017-01-27
+            </time>
+            Video and photos from the HTML5 Berlin User Group meetup 2013-12-09
+        </h3>
+        <p>
+            Finally added the video and photos from the <a href="https://www.meetup.com/Berlin-HTML5-User-Group/events/152209792/">HTML5 Berlin User Group meetup 2013-12-09</a> at Co-Up in Berlin, courtesy of <a href="https://linkedin.com/in/sutraalexandre">Alexandre Sutra</a>            of <a href="http://bemyapp.com/">BeMyApp</a>. Alexandre also <a href="http://blog.bemyapp.com/html5-bug-9-talks-upcoming-events-for-2014/">wrote about the event on their blog</a>.
+        </p>
+    </section>
+
     <section>
         <h3>
             <time datetime="2013-12-09" title="2013-12-09">

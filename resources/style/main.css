@@ -1,0 +1,182 @@
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Quando, Helvetica, Verdana, sans-serif;
+}
+
+h2 {
+  margin-top: 2em;
+  border-bottom: 1px solid lightgrey;
+}
+
+header {
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+footer {
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
+
+.hide {
+  display: none;
+}
+
+.mediumres,
+.lowres {
+  display: none;
+}
+
+@media (min-width: 1920px) {
+  .highres {
+    display: block;
+  }
+  .mediumres {
+    display: none;
+  }
+  .lowres {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .highres {
+    display: none;
+  }
+  .mediumres {
+    display: block;
+  }
+  .lowres {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .highres {
+    display: none;
+  }
+  .mediumres {
+    display: none;
+  }
+  .lowres {
+    display: block;
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  margin-top: 0.5em;
+}
+
+blockquote,
+.reference {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.5em;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  background-color: #eeeeee;
+  border-left: 0.3em solid #ccc;
+}
+
+pre code {
+  padding: 0.5em;
+  background-color: #f6f6f6;
+  display: block;
+  /*white-space: pre-wrap;*/
+  overflow: scroll;
+}
+
+.donate kbd {
+  display: inline-block;
+  color: #555;
+  vertical-align: middle;
+  padding: 0.1em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 0.3em;
+  box-shadow: inset 0 -1px 0 #bbb;
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+
+/* *** */
+
+
+/*
+* By Jonathan Snook
+* https://snook.ca/archives/html_and_css/simplest-css-slideshow
+*/
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  11.11% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  44.44% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slideshow {
+  position: relative;
+}
+
+.slideshow .fadein {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.slideshow img {
+  max-width: 75%;
+}
+
+.slideshow .fadein>img {
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.slideshow .fadein>img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slideshow .fadein>img:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.slideshow .fadein>img:nth-child(3) {
+  animation-delay: 6s;
+}
+
+
+/* *** */

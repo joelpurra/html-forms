@@ -4,6 +4,22 @@
 
 
 
+## Development
+
+Requires [`jekyll`](https://jekyllrb.com/).
+
+```shell
+# Start a local web server.
+jekyll serve
+
+# Browse to the default local address.
+open "http://127.0.0.1:4000/projects/html-forms/"
+
+# Changed files are recompiled automatically, so go ahead and edit the html/css/javascript.
+```
+
+
+
 ## License
 Copyright (c) 2013 [Joel Purra](https://joelpurra.com/)
 All rights reserved.

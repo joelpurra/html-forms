@@ -9,6 +9,8 @@
 # Remember to change config value in _config.yml after cloning the theme.
 #
 
+# Override the baseurl during testing with jekyll server --baseurl=''
+baseurl: /projects/html-forms
 
 # Used in titles, headers and links to your project url.
 projectName: Improving user experience in HTML forms

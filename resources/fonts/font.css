@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Quando';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('Quando-Regular'),
+		/* from https://fonts.gstatic.com/s/quando/v5/ysDGDGAevf6IZihUeAqYKQ.eot */
+		url('Quando.eot?#iefix') format('embedded-opentype'),
+		/* from https://fonts.gstatic.com/s/quando/v5/qVv1zuxOTRil_FcBMa30Kg.woff */
+		url('Quando.woff') format('woff'),
+		/* from https://fonts.gstatic.com/s/quando/v5/PH1InQe0rvp_yN3TzIuyyQ.woff2 */
+		url('Quando.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/l/font?kit=5Fa4sC3u0-lk7PDPFf4R4w&skey=dc4e8c3b7c4829c7&v=v5#Quando */
+		url('Quando.svg#Quando') format('svg'),
+		/* from https://fonts.gstatic.com/s/quando/v5/r5DvKXdPMFvthtcoLLAk3w.ttf */
+		url('Quando.ttf') format('truetype');
+}

@@ -42,7 +42,7 @@ title: Demo step 02
         <kbd>tab</kbd>
         through all fields every time.
     </p>
-    <form action="about:blank" method="POST">
+    <form action="about:blank" method="POST" data-plus-as-tab="true">
         <fieldset>
             <legend>Customer contact information</legend>
             <label for="phone">
@@ -52,7 +52,7 @@ title: Demo step 02
             <span id="invalid-phone" class="field-validation-feedback"></span>
             <span class="explanation">Input always starts here</span>
         </fieldset>
-        <fieldset data-skip-on-tab="true" data-plus-as-tab="true">
+        <fieldset data-skip-on-tab="true">
             <legend>Products</legend>
             <span class="explanation">This entire section can usually be left with default values, so it is skipped when tabbing.</span>
             <span class="explanation">If a new row is added, the numpad plus key or the enter key can be used to skip to the next field.</span>
@@ -229,7 +229,7 @@ title: Demo step 02
                 Order notes
                 <small>(optional)</small>
             </label>
-            <textarea id="notes" name="notes"></textarea>
+            <textarea id="notes" name="notes" data-plus-as-tab="false"></textarea>
             <small>(optional)</small>
             <span class="explanation">Notes are optional, but not skipped. It doesn't make sense to skip to the submit button when
                 <kbd>enter</kbd>can be used at some point before this textarea.

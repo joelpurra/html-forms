@@ -2,6 +2,14 @@
   <a href="https://joelpurra.com/projects/html-forms/"><img src="https://files.joelpurra.com/projects/html-forms/video/2013-12-09/joel-purra_html-forms_2013-12-09_presentation_highres.jpg" alt="Photo from the html-forms presentation at the HTML5 Berlin User Group meetup 2013-12-09" border="0" /></a>
 </p>
 
+
+
+> ## ⚠️ This project has been archived
+>
+> No future updates are planned. Feel free to continue using it, but expect no support.
+
+
+
 # [Improving user experience in HTML forms](https://joelpurra.com/projects/html-forms/) resources and demo
 
 <p class="donate">
